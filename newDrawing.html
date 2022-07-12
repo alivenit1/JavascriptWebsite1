@@ -17,7 +17,7 @@ body {
 
 /* Style the header */
 .header {
-  background-color: #6d76f3;
+  background-color: green;
   padding: 0px;
   text-align: center;
   font-size: 20px;
@@ -72,13 +72,13 @@ body {
 </head>
 <body>       
     <!--Header section -->
-  <div class="header">
-    <h3 id="langHeading" style="background-color:green">Abstract Art Competition</h3>
+  <div class="header" id="header">
+    <h3 id="langHeading">Abstract Art Competition</h3>
           <input type="button" id="eButton" value="English" onclick="myLang(this.id)">
           <input type="button" id="sButton" value="Spanish" onclick="myLang(this.id)">
           <h3>Instructions</h3>
-      <p id="insLang">Select the colour, size using the slider, start coordinates (X & Y), Shape and select optional gradient option then click "Draw" button to draw on canvas.<br> Once complete, fill your details and submit.  Good Luck!</p>
-      <p>Once drawing is complete, please right click on image and save to folder and upload by filling in registration form</p> <br>
+      <p id="insLang">Select the colour, size using the slider, start coordinates (X & Y), Shape and select optional gradient option then click Draw button to draw on canvas.<br> Once complete, fill your details and submit.  Good Luck!<br>
+      Once drawing is complete, please right click on image and save to folder and upload by filling in registration form</p> <br>
     </div>
   
   <div class="row">
@@ -88,14 +88,15 @@ body {
     <!-- color palette -->
     <div >
       <label for="palette">Fill color</label>
-      <input type="color" id="palette" name="palette" value="#e66465">
+      <input type="color" id="palette" name="palette" value="#e66465"><br>
+      <label for="strokeColour">Stroke color</label>
+      <input type="color" id="strokeColour" name="strokeColour" value="black">
       
   </div>
   
   <!-- range slider -->
   <div >
-    <label for="slider">Size 0-400px</label><input type="range" id="slider" name="slider"
-           min="0" max="400">
+    <label for="slider">Shape Size 0-400px</label><input type="range" id="slider" name="slider" min="0" max="400">
     
   </div>
 
@@ -111,6 +112,19 @@ body {
     <input type="number" id="y" name="y" min="0" max="400">
   </div>
 
+    <!-- Number field X for line-->
+    <div >
+      <label><b>For Line Only</b></label><br>
+      <label for="x2">End X-Coordinate </label>
+      <input type="number" id="x2" name="x2" min="0" max="400">
+    </div>
+  
+    <!-- Number field Y for Line-->
+    <div >
+      <label for="y2">End Y-Coordinate</label>
+      <input type="number" id="y2" name="y2" min="0" max="400">
+    </div>
+
   <!-- select -->
   <div >
     <label for="Shapes">Choose a shape:</label>
@@ -121,7 +135,7 @@ body {
       <option value="line">line</option>
     </select>
   </div>
-
+ 
   <!-- check box  -->
   <div>
     <input type="checkbox" id="linearFill" name="linearFill" value="linear">
